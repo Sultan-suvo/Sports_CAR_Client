@@ -165,7 +165,7 @@ const Register = () => {
                         Login
                     </Link>
                 </div>
-                <p className='text-danger text-center mt-4'><small>{error}</small></p>
+                <p className='text-danger text-center mt-4'><small>{error?.message}</small></p>
                 <div className="w-full px-6 flex items-center text-center mx-auto py-5">
                     <hr className="flex-1 border-t border-slate-200" />
                     <span className="my-0 mx-[10px] font-bold text-slate-400">or</span>
