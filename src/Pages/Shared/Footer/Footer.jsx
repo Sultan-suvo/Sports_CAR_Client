@@ -18,8 +18,8 @@ Supersonic Sports Cars</span>
                     <div className="flex flex-col md:mt-16 space-y-4">
                         <span className="text-white">Address:</span>
                         <hr className="border-white mb-4" />
-                        <span className="text-gray-300">123 Street Name</span>
-                        <span className="text-gray-300">City, State ZIP Code</span>
+                        <span className="text-gray-300">787 Mark View Street,</span>
+                        <span className="text-gray-300">California, 666 444 0000</span>
                     </div>
                     <div className="flex flex-col md:mt-16 space-y-4">
                         <h2 className="text-white">Contact</h2>
