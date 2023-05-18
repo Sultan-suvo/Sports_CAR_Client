@@ -128,8 +128,8 @@ const Login = () => {
                 </div>
                 <div className="-mt-1 text-center text-md transition text-slate-400 peer-invalid:text-pink-500">
                     Create New Account
-                    <Link className="ml-1 text-success font-semibold" to="/register">
-                        Register
+                    <Link className="ml-1 text-success font-semibold" to="/signup">
+                        Sign UP
                     </Link>
                 </div>
                 <p className='text-danger text-center mt-4'><small>{error}</small></p>
