@@ -15,7 +15,7 @@
   * 8. mongoDB
   
  * Features
-   *    One key feature of a food recipe website is the ability to search for recipes based on various criteria such as ingredients, cuisine type, dietary restrictions, cooking time, and difficulty level. This makes it easier for users to find recipes that match their preferences and needs. Additionally, a good food recipe website may also include user reviews and ratings, recipe collections, nutritional information, and step-by-step cooking instructions with photos or videos. These features can help users make informed decisions about which recipes to try and improve their overall cooking experience.
+   *    Display a collection of sports cars with key details such as make, model, year, price, and availability.Implement a search functionality to allow users to search for sports cars based on specific criteria like brand, price range, horsepower, etc.Provide comprehensive information about each sports car, including specifications, performance metrics, engine details, fuel consumption, and available color options.Showcase high-resolution images of sports cars from various angles to give users a visual representation of the car's design and features. Provide the latest news and updates from the sports car industry, including new releases, advancements in technology, and upcoming events or shows.
 
 
 * Instalation And Usage 
@@ -32,4 +32,4 @@
    * Gmail : S***8@gmail.com
 
  * Project Link
-   *  https://chef-recipe-hunter-ca501.web.app/
+   *  https://supersonic-sports-cars.web.app/
