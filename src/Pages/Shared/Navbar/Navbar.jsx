@@ -61,7 +61,7 @@ const Navbar = () => {
                     />
                     <button
                       onClick={handleLogOut}
-                      className="btn border-0 text-white bg-success px-2 py-1 font-bold rounded-md flex items-center gap-1"
+                      className="btn border-0 text-white bg-success px-2 font-bold rounded-md flex items-center gap-1"
                     >
                       Logout
                     </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
 
               ) : (
 
-                <button className="btn border-0  bg-success mt-2 px-3 py-1 fw-bold rounded-md flex items-center gap-1">
+                <button className="btn border-0  bg-success mt-2 px-2 fw-bold rounded-md flex items-center gap-1">
                   <Link className='text-decoration-none text-white' to='/login'>Login</Link>
                 </button>
               )}
@@ -96,7 +96,7 @@ const Navbar = () => {
                     />
                     <button
                       onClick={handleLogOut}
-                      className="btn border-0 text-white bg-success px-2 py-1 font-bold rounded-md flex items-center gap-1"
+                      className="btn border-0 text-white bg-success px-2 font-bold rounded-md flex items-center gap-1"
                     >
                       Logout
                     </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
 
               ) : (
 
-                <button className="btn border-0  bg-success mt-2 px-3 py-1 fw-bold rounded-md flex items-center gap-1">
+                <button className="btn border-0  bg-success mt-2 px-2  fw-bold rounded-md flex items-center gap-1">
                   <Link className='text-decoration-none text-white' to='/login'>Login</Link>
                 </button>
               )}

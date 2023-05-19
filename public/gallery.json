@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "img": "https://thumbs.dreamstime.com/b/red-sports-car-front-view-white-background-72410632.jpg",
+      "title": "Sports Car Front View",
+      "description": "This sports car showcases an impressive front view that exudes power and elegance.",
+      "price": "$100,000",
+      "year": 2022
+    },
+    {
+      "id": 2,
+      "img": "https://www.shutterstock.com/image-illustration/black-sport-car-isolated-on-260nw-660543430.jpg",
+      "title": "Sports Car Rear View",
+      "description": "The rear view of this sports car reveals its sleek and aerodynamic design, making heads turn wherever it goes.",
+      "price": "$90,000",
+      "year": 2023
+    },
+    {
+      "id": 3,
+      "img": "https://media.istockphoto.com/id/469129851/photo/convertible-car.jpg?s=612x612&w=0&k=20&c=sIqqIlRGGUxFpFhmOHN5Wpx7mFO1nvGKuDmod6H5GnM=",
+      "title": "Sports Car Interior",
+      "description": "Step inside this sports car to experience luxury and comfort with its premium interior features.",
+      "price": "$150,000",
+      "year": 2021
+    },
+    {
+      "id": 4,
+      "img": "https://t4.ftcdn.net/jpg/05/09/21/85/360_F_509218584_jMeLXzH0lKtsD87Sq3jJgluyIG8TdZQR.jpg",
+      "title": "Sports Car Side View",
+      "description": "The side view of this sports car reveals its bold and dynamic profile, making a statement on the road.",
+      "price": "$120,000",
+      "year": 2022
+    },
+    {
+      "id": 5,
+      "img": "https://www.dailysportscar.com/archive/subscribers/technical/images/aerv8_02_large.jpg",
+      "title": "Sports Car Engine",
+      "description": "The powerful engine of this sports car delivers exhilarating performance and uncompromising speed.",
+      "price": "$200,000",
+      "year": 2023
+    },
+    {
+      "id": 6,
+      "img": "https://www.drivespark.com/img/2016/03/22-1458628946-mercedes-amg-gt.jpg",
+      "title": "Sports Car Interior View",
+      "description": "Experience pure luxury and sophistication with the meticulously crafted interior of this sports car.",
+      "price": "$180,000",
+      "year": 2022
+    }
+  ]
+  
