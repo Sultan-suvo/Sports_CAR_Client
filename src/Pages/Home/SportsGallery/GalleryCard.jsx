@@ -3,7 +3,7 @@ const GalleryCard = ({ gallery }) => {
     const {  img, title,description,price,year } = gallery
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img className="rounded-md h-36 w-48" src={img}alt="Shoes" /></figure>
+            <figure><img className="rounded-md mt-4 h-36 w-48" src={img}alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title font-bold">{title}</h2>
                 <p className="text-slate-500">{description}</p>

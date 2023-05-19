@@ -15,7 +15,6 @@ const SportsGallery = () => {
         <div className="mt-12 mx-auto">
             <div className='text-center'>
                 <h1 className=' text-4xl font-bold mb-8'>Sports Car Gallery</h1>
-
             </div>
             <div className="grid grid-cols-1  md:grid-cols-3 gap-6">
                 {

@@ -1,0 +1,62 @@
+[
+    {
+        "id":1,
+        "title": "Sports Cars",
+        "toys": [
+            {
+                "picture": "https://www.popsci.com/uploads/2021/06/15/lambo.jpeg?auto=webp",
+                "name": "Lamborghini",
+                "price": "$50,000",
+                "rating": "4.5",
+                "details": "View Details"
+            },
+            {
+                "picture": "https://cdn.motor1.com/images/mgl/xqbqWz/s3/lamborghini-aventador-sv-coupe.jpg",
+                "name": "Lamborghini",
+                "price": "$60,000",
+                "rating": "4.2",
+                "details": "View Details"
+            }
+        ]
+    },
+    {
+        "id":2,
+        "title": "Luxury Cars",
+        "toys": [
+            {
+                "picture": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/p90475606-highres-rolls-royce-phantom-1677268219.jpg?crop=0.663xw:0.496xh;0.136xw,0.372xh&resize=1200:*",
+                "name": "Luxury Car",
+                "price": "$80,000",
+                "rating": "4.7",
+                "details": "View Details"
+            },
+            {
+                "picture": "https://stimg.cardekho.com/images/carexteriorimages/630x420/BMW/i7/8972/1675664292256/front-left-side-47.jpg",
+                "name": "Luxury Car",
+                "price": "$90,000",
+                "rating": "4.0",
+                "details": "View Details"
+            }
+        ]
+    },
+    {
+        "id":3,
+        "title": "Classic Cars",
+        "toys": [
+            {
+                "picture": "https://cdn.luxe.digital/media/20230206153504/best-classic-cars-vintage-luxe-digital-1.jpg",
+                "name": "Vintage Classic",
+                "price": "$70,000",
+                "rating": "4.3",
+                "details": "View Details"
+            },
+            {
+                "picture": "https://cfx-wp-images.imgix.net/2017/11/DSC_0359.jpg?auto=compress%2Cformat&fit=crop&h=620&ixlib=php-3.3.0&w=930&wpsize=neve-blog&s=57befe97747f3f22a2e9af6ff5cfcc09",
+                "name": "Classic Car",
+                "price": "$100,000",
+                "rating": "4.8",
+                "details": "View Details"
+            }
+        ]
+    }
+]
