@@ -45,12 +45,13 @@ const Navbar = () => {
           <div className={`hidden md:block ${isMenuOpen ? 'block' : 'hidden'}`}>
             <div className="ml-4 flex items-center">
               <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-              <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
+              <Link to='/allToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
+              <Link to='/addToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
               <Link to='blogs' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</Link>
               {user ? (
                 <div className='flex items-center'>
-                  <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
-                  <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
+                  <Link to='/myToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
+
 
                   <div className="flex mt-2 items-center justify-center gap-6">
                     <img
@@ -80,35 +81,36 @@ const Navbar = () => {
         <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
           <div className="ml-4 flex flex-col items-center">
             <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-            <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
+            <Link to='/allToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">All Toys</Link>
+            <Link to='/addToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
             <Link to='blogs' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blogs</Link>
             {user ? (
-                <div className='flex flex-col items-center'>
-                  <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
-                  <Link to='/' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add A Toy</Link>
+              <div className='flex flex-col items-center'>
+                <Link to='/myToys' className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">My Toys</Link>
 
-                  <div className="flex mt-2 items-center justify-center gap-6">
-                    <img
-                      title={user.displayName}
-                      className="w-12 h-12 rounded-full"
-                      src={user.photoURL}
-                      alt=""
-                    />
-                    <button
-                      onClick={handleLogOut}
-                      className="btn border-0 text-white bg-success px-2 font-bold rounded-md flex items-center gap-1"
-                    >
-                      Logout
-                    </button>
-                  </div>
+
+                <div className="flex mt-2 items-center justify-center gap-6">
+                  <img
+                    title={user.displayName}
+                    className="w-12 h-12 rounded-full"
+                    src={user.photoURL}
+                    alt=""
+                  />
+                  <button
+                    onClick={handleLogOut}
+                    className="btn border-0 text-white bg-success px-2 font-bold rounded-md flex items-center gap-1"
+                  >
+                    Logout
+                  </button>
                 </div>
+              </div>
 
-              ) : (
+            ) : (
 
-                <button className="btn border-0  bg-success mt-2 px-2  fw-bold rounded-md flex items-center gap-1">
-                  <Link className='text-decoration-none text-white' to='/login'>Login</Link>
-                </button>
-              )}
+              <button className="btn border-0  bg-success mt-2 px-2  fw-bold rounded-md flex items-center gap-1">
+                <Link className='text-decoration-none text-white' to='/login'>Login</Link>
+              </button>
+            )}
           </div>
         </div>
       </div>
