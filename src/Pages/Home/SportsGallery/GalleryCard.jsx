@@ -1,5 +1,6 @@
 
 const GalleryCard = ({ gallery }) => {
+
     const {  img, title,description,price,year } = gallery
     return (
         <div className="card bg-base-100 shadow-xl">
