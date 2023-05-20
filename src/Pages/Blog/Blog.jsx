@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('blog')
     return (
         <div className='mt-12 p-12 md:p-0'>
             <div className='mb-8'>

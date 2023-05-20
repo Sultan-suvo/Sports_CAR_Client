@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {  FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
     const [error , setError] = useState('')
     const { createUser,signInWithGoogle,} = useContext(AuthContext)
+    useTitle('signUp')
 
     const handleRegister = (event) => {
         event.preventDefault();

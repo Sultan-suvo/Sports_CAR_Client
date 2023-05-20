@@ -1,8 +1,10 @@
 
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
   const allToys = useLoaderData();
+  useTitle('allToys')
 
   const handleViewDetails = (toy) => {
     localStorage.setItem("selectedToy", JSON.stringify(toy));

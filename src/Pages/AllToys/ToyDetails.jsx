@@ -1,5 +1,7 @@
+import useTitle from "../../hooks/useTitle";
 
 const ToyDetails = () => {
+    useTitle('toyDetails')
     const selectedToy = JSON.parse(localStorage.getItem("selectedToy"));
 
 
