@@ -46,7 +46,7 @@ const AddToyPage = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
-            //   form.reset();
+              form.reset();
         }
     })
   };
