@@ -8,7 +8,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState([])
   useTitle('myToys')
 
-  const url = `http://localhost:5000/addToys?sellerEmail=${user.email}`
+  const url = `https://assignment-11-server-six-tawny.vercel.app/addToys?sellerEmail=${user.email}`
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
@@ -18,21 +18,21 @@ const MyToys = () => {
 
   const handleUpdate = id => {
     const proceed = confirm('Are You sure want to update your toy')
-    if(proceed){
-      fetch(`http://localhost:5000/addToys/${id}`,{
-        method:"PATCH",
-        headers:{
-          'content-type':'application/json'
+    if (proceed) {
+      fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
+        method: "PATCH",
+        headers: {
+          'content-type': 'application/json'
         },
-        body:JSON.stringify({statu:'confirm'})
+        body: JSON.stringify({ statu: 'confirm' })
       })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        if(data.modifiedCount >0){
-          'sbc'
-        }
-      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if (data.modifiedCount > 0) {
+            'sbc'
+          }
+        })
     }
   }
 
@@ -40,7 +40,7 @@ const MyToys = () => {
   const handleDelete = id => {
     const proceed = confirm('Are You sure want to delete your toy')
     if (proceed) {
-      fetch(`http://localhost:5000/addToys/${id}`, {
+      fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
         method: 'DELETE'
       })
         .then(res => res.json())
@@ -48,7 +48,7 @@ const MyToys = () => {
           console.log(data);
           if (data.deletedCount > 0) {
             alert('Deleted successful');
-            const remaining  = myToys.filter(myToy => myToy._id !== id)
+            const remaining = myToys.filter(myToy => myToy._id !== id)
             setMyToys(remaining);
           }
         })
@@ -80,11 +80,11 @@ const MyToys = () => {
                   <td className="border px-4 py-2">{toy.quantity}</td>
                   <td className="border px-4 py-2">{toy.description}</td>
                   <td className="border text-center px-4 py-2">
-                   <Link to={`/updateMyToy/${toy._id}`}>
-                   <button onClick={() => handleUpdate(toy._id)} className="mr-2 bg-blue-500 text-white px-2 py-1 rounded font-semibold hover:bg-blue-600">
-                      Update
-                    </button>
-                   </Link>
+                    <Link to={`/updateMyToy/${toy._id}`}>
+                      <button onClick={() => handleUpdate(toy._id)} className="mr-2 bg-blue-500 text-white px-2 py-1 rounded font-semibold hover:bg-blue-600">
+                        Update
+                      </button>
+                    </Link>
                     <button onClick={() => handleDelete(toy._id)} className="bg-red-500 text-white px-2 py-1 rounded font-semibold hover:bg-red-600">
                       Delete
                     </button>

@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: 'allToys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/addToys')
+                loader: () => fetch('https://assignment-11-server-six-tawny.vercel.app/addToys')
             },
             {
                 path: 'toyDetails',
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path: 'updateMyToy/:id',
                 element: <UpdateMyToy></UpdateMyToy>,
-                loader:({params})=>fetch(`http://localhost:5000/addToys/${params.id}`)
+                loader:({params})=>fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${params.id}`)
             },
             {
                 path: 'login',
