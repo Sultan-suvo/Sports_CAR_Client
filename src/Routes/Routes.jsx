@@ -10,52 +10,56 @@ import PrivateRoute from "./PrivateRoute";
 import AllToys from "../Pages/AllToys/AllToys";
 import MyToys from "../Pages/MyToys/MyToys";
 import ShopCategoryViewDetails from "../Pages/Home/ShopByCategory/ShopCategoryViewDetails";
+import ToyDetails from "../Pages/AllToys/ToyDetails";
 
 
 const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Main></Main>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-            path: "/",
-            element: <Home></Home>,
-        },
-        {
-            path: "shopDetails",
-            element: <PrivateRoute><ShopCategoryViewDetails></ShopCategoryViewDetails></PrivateRoute>,
-        },
-        {
-            path: 'allToys',
-            element: <AllToys></AllToys>,
-            loader:()=>fetch('http://localhost:5000/addToys')
-        },
-        {
-            path: 'addToys',
-            element: <PrivateRoute><AddToys></AddToys></PrivateRoute>,
-        },
-        {
-            path: 'blogs',
-            element: <Blog></Blog>,
-        },
-        
-        {
-            path: 'myToys',
-            element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
-            loader:()=>fetch('http://localhost:5000/addToys')
-        },
-        
-        {
-            path: 'login',
-            element: <Login></Login>,
-        },
-        {
-            path: 'signup',
-            element: <SignUp></SignUp>,
-        },
-      ]
-    },
-  ]);
+        path: "/",
+        element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: "/",
+                element: <Home></Home>,
+            },
+            {
+                path: "shopDetails",
+                element: <PrivateRoute><ShopCategoryViewDetails></ShopCategoryViewDetails></PrivateRoute>,
+            },
+            {
+                path: 'allToys',
+                element: <AllToys></AllToys>,
+                loader: () => fetch('http://localhost:5000/addToys')
+            },
+            {
+                path: 'toyDetails',
+                element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
+            },
+            {
+                path: 'addToys',
+                element: <PrivateRoute><AddToys></AddToys></PrivateRoute>,
+            },
+            {
+                path: 'blogs',
+                element: <Blog></Blog>,
+            },
 
-  export default router;
+            {
+                path: 'myToys',
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
+            },
+
+            {
+                path: 'login',
+                element: <Login></Login>,
+            },
+            {
+                path: 'signup',
+                element: <SignUp></SignUp>,
+            },
+        ]
+    },
+]);
+
+export default router;
