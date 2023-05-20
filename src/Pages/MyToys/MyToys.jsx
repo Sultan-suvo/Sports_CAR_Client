@@ -4,7 +4,7 @@ const MyToys = () => {
     const allToys = useLoaderData();
     return (
         <div className=" my-12 mx-auto">
-          <h2 className="text-2xl text-center font-bold mb-4">All Toys</h2>
+          <h2 className="text-2xl text-center font-bold mb-4">My Toys</h2>
           <div className="overflow-x-auto">
             <table className="table-auto w-full border-collapse">
               <thead>

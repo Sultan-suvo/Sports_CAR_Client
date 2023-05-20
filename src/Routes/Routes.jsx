@@ -9,6 +9,7 @@ import AddToys from "../Pages/AddToys/AddToys";
 import PrivateRoute from "./PrivateRoute";
 import AllToys from "../Pages/AllToys/AllToys";
 import MyToys from "../Pages/MyToys/MyToys";
+import ShopCategoryViewDetails from "../Pages/Home/ShopByCategory/ShopCategoryViewDetails";
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         {
             path: "/",
             element: <Home></Home>,
+        },
+        {
+            path: "shopDetails",
+            element: <PrivateRoute><ShopCategoryViewDetails></ShopCategoryViewDetails></PrivateRoute>,
         },
         {
             path: 'allToys',
@@ -37,7 +42,7 @@ const router = createBrowserRouter([
         
         {
             path: 'myToys',
-            element: <MyToys></MyToys>,
+            element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
             loader:()=>fetch('http://localhost:5000/addToys')
         },
         

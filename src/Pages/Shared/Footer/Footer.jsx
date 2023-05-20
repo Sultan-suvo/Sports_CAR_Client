@@ -1,5 +1,6 @@
 import { FaFacebook, FaInstagram, FaMapMarkerAlt, FaPhone, FaTwitter, FaYoutube } from "react-icons/fa";
 import logo from '../../../assets/logo.jpg';
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -36,10 +37,10 @@ Supersonic Sports Cars</span>
                     <div className="flex flex-col md:mt-16 space-y-4">
                         <span className="text-white">Follow Us:</span>
                         <div className="flex space-x-4">
-                            <FaFacebook className="text-white text-2xl" />
-                            <FaTwitter className="text-white text-2xl" />
-                            <FaInstagram className="text-white text-2xl" />
-                            <FaYoutube className="text-white text-2xl" />
+                            <Link to='https://www.facebook.com/autolink/'><FaFacebook className="text-white text-2xl" /></Link>
+                            <Link to='https://twitter.com/cars?lang=en'><FaTwitter className="text-white text-2xl" /></Link>
+                            <Link to='https://www.instagram.com/rollsroycecars/?hl=en'><FaInstagram className="text-white text-2xl" /></Link>
+                            <Link to='https://www.youtube.com/channel/UC3fFzCYq5devEJ8k2FRuEtQ'><FaYoutube className="text-white text-2xl" /></Link>                          
                         </div>
                     </div>
                    
