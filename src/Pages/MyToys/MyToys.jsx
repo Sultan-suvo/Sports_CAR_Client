@@ -4,20 +4,20 @@ import useTitle from "../../hooks/useTitle";
 import { Link } from "react-router-dom";
 
 const MyToys = () => {
-  const { user } = useContext(AuthContext)
-  const [myToys, setMyToys] = useState([])
-  useTitle('myToys')
+  const { user } = useContext(AuthContext);
+  const [myToys, setMyToys] = useState([]);
+  const [sortOrder, setSortOrder] = useState("ascending");
+  useTitle('myToys');
 
-  const url = `https://assignment-11-server-six-tawny.vercel.app/addToys?sellerEmail=${user.email}`
+  const url = `https://assignment-11-server-six-tawny.vercel.app/addToys?sellerEmail=${user.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
       .then(data => setMyToys(data))
-  }, [url])
-
+  }, [url]);
 
   const handleUpdate = id => {
-    const proceed = confirm('Are You sure want to update your toy')
+    const proceed = window.confirm('Are you sure you want to update your toy?');
     if (proceed) {
       fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
         method: "PATCH",
@@ -30,15 +30,14 @@ const MyToys = () => {
         .then(data => {
           console.log(data);
           if (data.modifiedCount > 0) {
-            'sbc'
+            alert('Toy updated successfully');
           }
         })
     }
   }
 
-
   const handleDelete = id => {
-    const proceed = confirm('Are You sure want to delete your toy')
+    const proceed = window.confirm('Are you sure you want to delete your toy?');
     if (proceed) {
       fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
         method: 'DELETE'
@@ -47,7 +46,7 @@ const MyToys = () => {
         .then(data => {
           console.log(data);
           if (data.deletedCount > 0) {
-            alert('Deleted successful');
+            alert('Toy deleted successfully');
             const remaining = myToys.filter(myToy => myToy._id !== id)
             setMyToys(remaining);
           }
@@ -55,9 +54,21 @@ const MyToys = () => {
     }
   }
 
+  const handleSort = () => {
+    const sortedToys = [...myToys];
+    if (sortOrder === "ascending") {
+      sortedToys.sort((a, b) => a.price - b.price);
+      setSortOrder("descending");
+    } else {
+      sortedToys.sort((a, b) => b.price - a.price);
+      setSortOrder("ascending");
+    }
+    setMyToys(sortedToys);
+  }
+
   return (
     <div>
-      <div className=" my-12 mx-auto">
+      <div className="my-12 mx-auto">
         <h2 className="text-2xl text-center font-bold mb-4">My Toys</h2>
         <div className="overflow-x-auto">
           <table className="table-auto w-full border-collapse">
@@ -65,7 +76,15 @@ const MyToys = () => {
               <tr>
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">SellerEmail</th>
-                <th className="px-4 py-2">Price</th>
+                <th className="px-4 py-2">
+                  Price
+                  <button
+                    onClick={handleSort}
+                    className="text-blue-500 ml-2"
+                  >
+                    {sortOrder === "ascending" ? "▲" : "▼"}
+                  </button>
+                </th>
                 <th className="px-4 py-2">Quantity</th>
                 <th className="px-4 py-2">Description</th>
                 <th className="px-4 py-2">Action</th>
@@ -81,11 +100,17 @@ const MyToys = () => {
                   <td className="border px-4 py-2">{toy.description}</td>
                   <td className="border text-center px-4 py-2">
                     <Link to={`/updateMyToy/${toy._id}`}>
-                      <button onClick={() => handleUpdate(toy._id)} className="mr-2 bg-blue-500 text-white px-2 py-1 rounded font-semibold hover:bg-blue-600">
+                      <button
+                        onClick={() => handleUpdate(toy._id)}
+                        className="mr-2 bg-blue-500 text-white px-2 py-1 rounded font-semibold hover:bg-blue-600"
+                      >
                         Update
                       </button>
                     </Link>
-                    <button onClick={() => handleDelete(toy._id)} className="bg-red-500 text-white px-2 py-1 rounded font-semibold hover:bg-red-600">
+                    <button
+                      onClick={() => handleDelete(toy._id)}
+                      className="bg-red-500 text-white px-2 py-1 rounded font-semibold hover:bg-red-600"
+                    >
                       Delete
                     </button>
                   </td>
