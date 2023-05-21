@@ -39,38 +39,47 @@ const UpdateMyToy = () => {
   };
 
   return (
-    <div className="my-12 mx-auto">
-      <h2 className="text-3xl">Update Toy</h2>
+    <div className="my-12 w-1/2 mx-auto">
+      <h2 className="text-3xl mb-6 text-center">Update Toy</h2>
       <form onSubmit={handleUpdate}>
-        <label htmlFor="price">Price:</label>
-        <input
-          type="number"
-          id="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          className="input-field border rounded-md"
-        />
+        <div className="form-field flex">
+          <label htmlFor="price">Price:</label>
+          <input
+            type="number"
+            id="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className="input-field border rounded-md ms-2 w-full"
+          />
+        </div>
 
-        <label htmlFor="quantity">Quantity:</label>
-        <input
-          type="number"
-          id="quantity"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-          className="input-field"
-        />
+        <div className="form-field flex mt-4">
+          <label htmlFor="quantity">Quantity:</label>
+          <input
+            type="number"
+            id="quantity"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+            className="input-field border rounded-md ms-2 w-full"
+          />
+        </div>
 
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          className="input-field"
-        ></textarea>
+        <div className="form-field flex mt-4">
+          <label htmlFor="description">Description:</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="input-field border rounded-md ms-2 w-full"
+          ></textarea>
+        </div>
 
-       <input type="submit" value="Update Toy" />
+        <div className="text-center mt-4">
+          <input type="submit" value="Update Toy" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded" />
+        </div>
       </form>
     </div>
+
   );
 };
 
