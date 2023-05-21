@@ -9,7 +9,7 @@ const ToyDetails = () => {
         <div>
             <div className="card my-12 w-3/4 md:w-1/2 mx-auto bg-base-100 shadow-xl">
                 <div className="md:flex md:p-3 justify-between">
-                    <figure><img className="h-36 md:h-56" src={selectedToy.pictureUrl} alt="Shoes" /></figure>
+                    <figure><img className="h-36 md:h-56 rounded-lg" src={selectedToy.pictureUrl} alt="Shoes" /></figure>
                     <div className="card-body text-md">
                         <h2 className="card-title text-2xl">Toy name :{selectedToy.name}</h2>
                         <p>SellerName : <span className="text-orange-600">{selectedToy.sellerName}</span></p>
