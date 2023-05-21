@@ -22,9 +22,8 @@ const MyToys = () => {
       });
   }, [url]);
 
-  const handleUpdate = (id) => {
-    alert('Are you sure you want to update your toy?')
-    
+  const handleUpdate = () => {
+    alert('Are you sure you want to update your toy?')   
   }
 
   const handleDelete = (id) => {
