@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const [myToys, setMyToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("ascending");
   useTitle('myToys');
@@ -18,29 +17,17 @@ const MyToys = () => {
         const sortedData = data.sort((a, b) => a.price - b.price);
         setMyToys(sortedData);
       })
+      .catch(error => {
+        console.error("Error fetching toys:", error);
+      });
   }, [url]);
 
-  const handleUpdate = id => {
-    const proceed = window.confirm('Are you sure you want to update your toy?');
-    if (proceed) {
-      fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
-        method: "PATCH",
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({ statu: 'confirm' })
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          if (data.modifiedCount > 0) {
-            alert('Toy updated successfully');
-          }
-        })
-    }
+  const handleUpdate = (id) => {
+    alert('Are you sure you want to update your toy?')
+    
   }
 
-  const handleDelete = id => {
+  const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure you want to delete your toy?');
     if (proceed) {
       fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
@@ -55,6 +42,9 @@ const MyToys = () => {
             setMyToys(remaining);
           }
         })
+        .catch(error => {
+          console.error("Error deleting toy:", error);
+        });
     }
   }
 
