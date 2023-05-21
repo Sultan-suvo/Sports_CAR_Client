@@ -2,13 +2,20 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const ShopByCategoryCard = ({ picture, name, price, rating, details }) => {
+ const {user}= useContext(AuthContext)
+ 
   useEffect(() => {
     AOS.init();
   }, []);
 
   const handleClick = () => {
+    if(!user){
+      alert('You have to log in first to view detail')
+    }   
     localStorage.setItem("productDetails", JSON.stringify({ name, price, rating, picture, details }));
     history.push("/details");
   };

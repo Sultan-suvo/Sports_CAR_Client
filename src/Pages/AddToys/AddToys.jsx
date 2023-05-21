@@ -103,9 +103,9 @@ const AddToyPage = () => {
             required
           >
             <option value="">Select Sub-category</option>
-            <option value="Math Toys">Math Toys</option>
-            <option value="Language Toys">Language Toys</option>
-            <option value="Science Toys">Science Toys</option>
+            <option value="Math Toys">Lamborgini Car</option>
+            <option value="Language Toys">Classic Car</option>
+            <option value="Science Toys">Hills CAr</option>
           </select>
         </div>
         <div className="w-full md:w-1/2 md:pl-2 mb-4">
