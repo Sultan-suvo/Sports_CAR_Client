@@ -5,15 +5,19 @@ import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
+  console.log(user);
   const [myToys, setMyToys] = useState([]);
   const [sortOrder, setSortOrder] = useState("ascending");
   useTitle('myToys');
 
-  const url = `https://assignment-11-server-six-tawny.vercel.app/addToys?sellerEmail=${user.email}`;
+  const url = `https://assignment-11-server-six-tawny.vercel.app/addToys?email=${user.email}`;
   useEffect(() => {
     fetch(url)
       .then(res => res.json())
-      .then(data => setMyToys(data))
+      .then(data => {
+        const sortedData = data.sort((a, b) => a.price - b.price);
+        setMyToys(sortedData);
+      })
   }, [url]);
 
   const handleUpdate = id => {
