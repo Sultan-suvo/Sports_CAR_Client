@@ -88,6 +88,7 @@ const AddToyPage = () => {
           <label htmlFor="sellerEmail" className="block font-semibold mb-1">Seller Email</label>
           <input
             type="email"
+            defaultValue='sulthansuvo@gmail.com'
             id="sellerEmail"
             name="sellerEmail" 
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none"

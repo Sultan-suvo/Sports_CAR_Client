@@ -7,34 +7,19 @@ const ToyDetails = () => {
 
     return (
         <div>
-            <div className="overflow-x-auto my-8">
-                <table className="table-auto w-full border-collapse">
-                    <thead>
-                        <tr>
-                            <th className="px-4 py-2">PictureUrl</th>
-                            <th className="px-4 py-2">Seller Name</th>
-                            <th className="px-4 py-2">Seller email</th>
-                            <th className="px-4 py-2">Toy name</th>
-                            <th className="px-4 py-2">Price</th>
-                            <th className="px-4 py-2">Rating</th>
-                            <th className="px-4 py-2">Quantity</th>
-                            <th className="px-4 py-2">Descriptoin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="border px-4 py-2">{selectedToy.pictureUrl}</td>
-                            <td className="border px-4 py-2">{selectedToy.sellerName}</td>
-                            <td className="border px-4 py-2">{selectedToy.sellerEmail}</td>
-                            <td className="border px-4 py-2">{selectedToy.name}</td>
-                            <td className="border px-4 py-2">{selectedToy.price}</td>
-                            <td className="border px-4 py-2">{selectedToy.rating}</td>
-                            <td className="border px-4 py-2">{selectedToy.quantity}</td>
-                            <td className="border px-4 py-2">{selectedToy.description}</td>
-                        </tr>
-
-                    </tbody>
-                </table>
+            <div className="card my-12 w-3/4 md:w-1/2 mx-auto bg-base-100 shadow-xl">
+                <div className="md:flex md:p-3 justify-between">
+                    <figure><img className="h-36 md:h-56" src={selectedToy.pictureUrl} alt="Shoes" /></figure>
+                    <div className="card-body text-md">
+                        <h2 className="card-title text-2xl">Toy name :{selectedToy.name}</h2>
+                        <p>SellerName : <span className="text-orange-600">{selectedToy.sellerName}</span></p>
+                        <p>SellerEmail :<span className="text-orange-600">{selectedToy.sellerEmail}</span></p>
+                        <p>Price : <span className="text-orange-600">{selectedToy.price}</span></p>
+                        <p>Rating : <span className="text-orange-600">{selectedToy.rating}</span></p>
+                        <p>Quantity : <span className="text-orange-600">{selectedToy.quantity}</span></p>
+                        <p>Description : <span className="text-orange-600">{selectedToy.description}</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     );
