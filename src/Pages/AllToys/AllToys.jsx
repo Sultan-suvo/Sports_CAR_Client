@@ -5,15 +5,19 @@ import useTitle from "../../hooks/useTitle";
 const AllToys = () => {
   const allToys = useLoaderData();
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredToys, setFilteredToys] = useState(allToys);
   useTitle('allToys')
 
   const handleViewDetails = (toy) => {
     localStorage.setItem("selectedToy", JSON.stringify(toy));
   };
 
-  const filteredToys = allToys.filter(toy =>
-    toy.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const handleFilter = () => {
+    const filteredData = allToys.filter(toy =>
+      toy.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredToys(filteredData);
+  };
 
   return (
     <div className="my-12 mx-auto">
@@ -21,11 +25,17 @@ const AllToys = () => {
       <div className="mb-4">
         <input
           type="text"
-          className="border border-gray-300 rounded py-2 px-4 w-full"
+          className="border border-gray-300 rounded py-2 px-4 w-4/3"
           placeholder="Search by Toy Name"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
+        <button
+          className="bg-blue-500 text-white py-2 px-4 rounded ml-4"
+          onClick={handleFilter}
+        >
+          Filter
+        </button>
       </div>
       <div className="overflow-x-auto">
         <table className="table-auto w-full border-collapse">
