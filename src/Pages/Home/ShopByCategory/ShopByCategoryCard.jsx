@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const ShopByCategoryCard = ({ picture, name, price, rating, details }) => {
  const {user}= useContext(AuthContext)
@@ -13,9 +14,13 @@ const ShopByCategoryCard = ({ picture, name, price, rating, details }) => {
   }, []);
 
   const handleClick = () => {
-    if(!user){
-      alert('You have to log in first to view detail')
-    }   
+    if (!user) {
+      Swal.fire({
+        title: 'Login Required',
+        text: 'You have to log in first to view details',
+        icon: 'warning',
+      });
+    } 
     localStorage.setItem("productDetails", JSON.stringify({ name, price, rating, picture, details }));
     history.push("/details");
   };

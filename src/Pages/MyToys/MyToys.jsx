@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useTitle from "../../hooks/useTitle";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -23,29 +24,50 @@ const MyToys = () => {
   }, [url]);
 
   const handleUpdate = () => {
-    alert('Are you sure you want to update your toy?')   
-  }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to update your toy',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Handle the update logic here
+        // You can use `id` to identify the toy you want to update
+        // Example: history.push(`/updateMyToy/${id}`);
+      }
+    });
+  };
 
   const handleDelete = (id) => {
-    const proceed = window.confirm('Are you sure you want to delete your toy?');
-    if (proceed) {
-      fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
-        method: 'DELETE'
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert('Toy deleted successfully');
-            const remaining = myToys.filter(myToy => myToy._id !== id)
-            setMyToys(remaining);
-          }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to delete your toy',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://assignment-11-server-six-tawny.vercel.app/addToys/${id}`, {
+          method: 'DELETE'
         })
-        .catch(error => {
-          console.error("Error deleting toy:", error);
-        });
-    }
-  }
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire('Deleted!', 'Your toy has been deleted.', 'success');
+              const remaining = myToys.filter(myToy => myToy._id !== id)
+              setMyToys(remaining);
+            }
+          })
+          .catch(error => {
+            console.error("Error deleting toy:", error);
+          });
+      }
+    });
+  };
 
   const handleSort = () => {
     const sortedToys = [...myToys];
@@ -57,7 +79,7 @@ const MyToys = () => {
       setSortOrder("ascending");
     }
     setMyToys(sortedToys);
-  }
+  };
 
   return (
     <div>
